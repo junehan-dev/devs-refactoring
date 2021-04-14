@@ -8,3 +8,12 @@ Recommodation by Erich Gamma(author of GOF, VScode, Junit, Eclipes)
       - improving inheritance structure
       - make code dry or less code
    - main part of this book is from chapter 6 to chapter 12.(procedure and technic)
+
+01
+--
+
+Extracting function
+^^^^^^^^^^^^^^^^^^^
+   *When Extracting function*
+      Take a good care of local variable's validity.
+
