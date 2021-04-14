@@ -1,0 +1,11 @@
+Refactoring by Martin Fowler
+============================
+
+Recommodation by Erich Gamma(author of GOF, VScode, Junit, Eclipes)
+-------------------------------------------------------------------
+   - Refactoring referenced from smalltalk community.
+   - Refactoring Becaome essential in framework development.
+      - improving inheritance structure
+      - make code dry or less code
+   - main part of this book is from chapter 6 to chapter 12.(procedure and technic)
+   - 
