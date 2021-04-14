@@ -6,8 +6,8 @@ def statement(invoice, plays):
 	for perf in invoice["performances"]:
 		play = plays[perf["playID"]];
 		this_amount = 0;
-
-		if (play["type"] == "tragedy"):
+# <-- Export this functionallity : amount_for(aPerformance)
+		if (play["type"] == "tragedy"):	
 			this_amount = 40000;
 			if (perf["audience"] > 30):
 				this_amount += 1000 * (perf["audience"] - 30);
@@ -18,7 +18,7 @@ def statement(invoice, plays):
 			this_amount += 300 * perf["audience"];
 		else:
 			raise ValueError(f"Unknown genre: {play['type']}");
-
+# -->
 		volume_credits += max((perf["audience"] - 30, 0));
 
 		if (play["type"] == "comedy"):
@@ -39,3 +39,4 @@ if __name__ == "__main__":
 	for invoice in invoices:
 		print(statement(invoice, plays));
 	exit(0);
+
