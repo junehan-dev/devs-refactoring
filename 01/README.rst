@@ -1,3 +1,18 @@
+0.21b
+-----
+specs
+^^^^^
+   1. NEW/statements.play_for(aPerformance)
+      returns object value data in ``plays`` by playID in 1st arg, aPerformance.
+   2. REFACTOR/statements.statement
+      1. 2nd arg(plays) removed
+         now usage in plays can be reffered by ``play_for`` function.
+      #. ``plays`` in global only approached by ``play_for()``
+         ``plays`` renamed to ``_plays``
+
+need improve
+^^^^^^^^^^^^
+
 0.2b
 ----
 specs

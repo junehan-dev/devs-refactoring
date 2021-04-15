@@ -4,7 +4,7 @@ def amount_for(aPerformance, play):
 			aPerformance
 				pref of userdata {name, audience}
 			play 
-				meta data of aPerformanceormace 
+				meta data of Performance 
 
 		Exceptions:
 			ValueError
