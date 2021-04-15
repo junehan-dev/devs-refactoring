@@ -1,3 +1,16 @@
+0.2b
+----
+specs
+^^^^^
+   1. rename: amounts.amount_for/parametername
+      ``perf`` to ``aPerformance``
+   #. rename: amounts.amount_for/return variable name
+      ``this_amount`` to ``result``
+
+need improve
+^^^^^^^^^^^^
+   - checking invoice's performance playID with plays in not needed.
+
 0.2a
 ----
 specs
