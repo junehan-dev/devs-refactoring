@@ -1,3 +1,19 @@
+0.22
+----
+specs
+^^^^^
+   - NEW/statements.{get_volume_credit(perf), get_total_volume_credits(perfs)}
+      1. moved total_credit into new for loop below it was at.
+      #. Extraction/total_credits from ``get_volume_credit(perf)``
+      #. total_credit loop moved to ``get_total_volume_credits(perfs)``
+         - ``get_total...`` is caller to func ``get_volume...``
+      #. ``statement{volume_credit}`` variable no needs, moved to inline expression.
+      #. Test passed
+
+need improve
+^^^^^^^^^^^^
+   - Tomorrow...lol!
+
 0.22b
 -----
 specs
