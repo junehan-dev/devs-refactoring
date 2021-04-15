@@ -12,6 +12,8 @@ specs
 
 need improve
 ^^^^^^^^^^^^
+   - set amount as currency format
+      function needed.
 
 0.2b
 ----
