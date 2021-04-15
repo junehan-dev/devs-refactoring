@@ -10,23 +10,25 @@ def statement(invoice):
 
 	for perf in invoice["performances"]:
 		this_amount = amount_for(perf, play_for(perf));
+		ret += f" {play_for(perf)['name']}: {itousd(this_amount)}$ {perf['audience']}audiences\n";
+		total_amount += this_amount;
+
+	for perf in invoice["performances"]:
 		volume_credits += max((perf["audience"] - 30, 0));
 		if (play_for(perf) == "comedy"):
 			volume_credits += int(perf["audience"] / 5);
 
-		ret += f" {play_for(perf)['name']}: {itousd(this_amount)}$ {perf['audience']}audiences\n";
-		total_amount += this_amount;
-
 	ret += f"total_amount: {itousd(total_amount)}$\n";
 	ret += f"Accumulated points: {volume_credits}points\n";
-	return (ret)
+	return (ret);
 
 
 def play_for(aPerformance):
-	return (_plays[aPerformance["playID"]])
+	return (_plays[aPerformance["playID"]]);
+
 
 def itousd(amount):
-	amount /= 100;		#	<- USD format
+	amount /= 100;
 	src = f"{int(amount)}";
 	src_len = len(src);
 	if (src_len < 4):
@@ -47,6 +49,7 @@ def itousd(amount):
 
 	dest[i] = src[offset:];
 	return ("".join(dest));
+
 
 if __name__ == "__main__":
 	import json
