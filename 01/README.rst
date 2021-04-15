@@ -1,3 +1,15 @@
+0.22b
+-----
+specs
+^^^^^
+   1. NEW/statements.itocurrency(amount)
+      returns int to string with comma separated per 3-characters between.
+   #. rename itocurrency to itousd
+
+need improve
+^^^^^^^^^^^^
+   - clean the statements.statement{volumnCredits} variable.
+
 0.21b
 -----
 specs
