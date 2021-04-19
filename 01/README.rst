@@ -12,7 +12,8 @@ specs
 
 need improve
 ^^^^^^^^^^^^
-   - Tomorrow...lol!
+   - refered in need_improve in 0.1, 
+      - result string should also be parsed to html.
 
 0.22b
 -----
