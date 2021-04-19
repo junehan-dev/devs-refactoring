@@ -2,16 +2,20 @@
 -----
 specs
 ^^^^^
-   - Extract/statements.statement/get text
+   1. Extract/statements.statement/get text
       - New/statements.render_plain_text
-   - Refactor/statements.render_plain_text
+   #. Refactor/statements.render_plain_text
       - customer data now depends on caller function.
       - performance data depends on caller function.
          - Set performace list data as newly generated one(to protect original).
       - remove parameter invoice in render_plain_text.
       - make not to use external functions directly to parse advanced context_data
-   - Refactor/statements.statement
+   #. Refactor/statements.statement
       - context_data sets ``{play: play_data by playid}`` by this function.
+   #. Refactor/statements.render_plain_text
+      - ``{'play'}`` data now handled by data argument itself.
+      - ``statements.get_volume_credit(perf)`` applied above rule also.
+      - ``amounts.amount_for(perf, play)`` arg ``play`` substitued by perf's ``play`` key-value.
 
 need improve
 ^^^^^^^^^^^^

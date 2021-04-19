@@ -4,7 +4,7 @@ _plays = None;
 
 def get_volume_credit(perf):
 	result = max((perf["audience"] - 30, 0));
-	if (play_for(perf) == "comedy"):
+	if (perf["play"]["type"] == "comedy"):
 		result += int(perf["audience"] / 5);
 	return (result);
 
@@ -20,12 +20,12 @@ def render_plain_text(data):
 	total_amount = 0;
 	ret = f"state detail(Username: {data['customer']})\n";
 	for perf in data["performances"]:
-		this_amount = amount_for(perf, perf["play"]);
-		ret += f" {play_for(perf)['name']}: {itousd(this_amount)}$ {perf['audience']}audiences\n";
+		this_amount = amount_for(perf);
+		ret += f" {perf['play']['name']}: {itousd(this_amount)}$ {perf['audience']}audiences\n";
 		total_amount += this_amount;
 
 	ret += f"total_amount: {itousd(total_amount)}$\n";
-	ret += f"Accumulated points: {get_total_volume_credits(invoice['performances'])}points\n";
+	ret += f"Accumulated points: {get_total_volume_credits(data['performances'])}points\n";
 	return (ret);
 
 
