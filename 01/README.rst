@@ -1,3 +1,13 @@
+0.23a
+-----
+specs
+^^^^^
+   - Extract/statements.statements/get text
+      - New/statements.render_plain_text
+
+need improve
+^^^^^^^^^^^^
+
 0.22
 ----
 specs

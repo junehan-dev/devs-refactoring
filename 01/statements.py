@@ -13,11 +13,10 @@ def get_total_volume_credits(perfs):
 	result = 0;
 	for perf in perfs:
 		result += get_volume_credit(perf);
-
 	return (result);
 
 
-def statement(invoice):
+def render_plain_text(invoice):
 	total_amount = 0;
 	ret = f"state detail(Username: {invoice['customer']})\n";
 	for perf in invoice["performances"]:
@@ -28,6 +27,10 @@ def statement(invoice):
 	ret += f"total_amount: {itousd(total_amount)}$\n";
 	ret += f"Accumulated points: {get_total_volume_credits(invoice['performances'])}points\n";
 	return (ret);
+
+
+def statement(invoice):
+	return render_plain_text(invoice);
 
 
 def play_for(aPerformance):
