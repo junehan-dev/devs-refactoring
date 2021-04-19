@@ -4,6 +4,8 @@ specs
 ^^^^^
    - Extract/statements.statements/get text
       - New/statements.render_plain_text
+   - Refactor/statements.render_plain_text
+      - customer data now depends on caller function.
 
 need improve
 ^^^^^^^^^^^^

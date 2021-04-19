@@ -16,9 +16,9 @@ def get_total_volume_credits(perfs):
 	return (result);
 
 
-def render_plain_text(invoice):
+def render_plain_text(data, invoice):
 	total_amount = 0;
-	ret = f"state detail(Username: {invoice['customer']})\n";
+	ret = f"state detail(Username: {data['customer']})\n";
 	for perf in invoice["performances"]:
 		this_amount = amount_for(perf, play_for(perf));
 		ret += f" {play_for(perf)['name']}: {itousd(this_amount)}$ {perf['audience']}audiences\n";
@@ -30,7 +30,9 @@ def render_plain_text(invoice):
 
 
 def statement(invoice):
-	return render_plain_text(invoice);
+	context_data = {};
+	context_data["customer"] = invoice["customer"];
+	return render_plain_text(context_data, invoice);
 
 
 def play_for(aPerformance):
