@@ -20,6 +20,8 @@ specs
       - Set amount by ``amount_for`` to each performance in ``context_data["performances"]``
          - in render_plain_text, use ``perf['amount'])`` when summations to ``have total_amount.``
          - in render_plain_text, remove ``total_amount`` variable.
+      - Set total_amount and total_volume_credits from at ``context_data.``
+         - in render_plain_text, remove function calls to set total values, ``total_amount, total_volume_credits``
 
 need improve
 ^^^^^^^^^^^^
