@@ -25,6 +25,9 @@ specs
 
 need improve
 ^^^^^^^^^^^^
+   1. convert iterations to pipeline.
+      - FIX ``statements.get_total_volume_credit(perfs)``
+      - NEW ``statements.get_total_amount(perfs)``
 
 0.22
 ----
