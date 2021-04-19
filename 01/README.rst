@@ -16,6 +16,10 @@ specs
       - ``{'play'}`` data now handled by data argument itself.
       - ``statements.get_volume_credit(perf)`` applied above rule also.
       - ``amounts.amount_for(perf, play)`` arg ``play`` substitued by perf's ``play`` key-value.
+   #. Refactor/statements/statement.context_data
+      - Set amount by ``amount_for`` to each performance in ``context_data["performances"]``
+         - in render_plain_text, use ``perf['amount'])`` when summations to ``have total_amount.``
+         - in render_plain_text, remove ``total_amount`` variable.
 
 need improve
 ^^^^^^^^^^^^

@@ -17,14 +17,11 @@ def get_total_volume_credits(perfs):
 
 
 def render_plain_text(data):
-	total_amount = 0;
 	ret = f"state detail(Username: {data['customer']})\n";
 	for perf in data["performances"]:
-		this_amount = amount_for(perf);
-		ret += f" {perf['play']['name']}: {itousd(this_amount)}$ {perf['audience']}audiences\n";
-		total_amount += this_amount;
+		ret += f" {perf['play']['name']}: {itousd(perf['amount'])}$ {perf['audience']}audiences\n";
 
-	ret += f"total_amount: {itousd(total_amount)}$\n";
+	ret += f"total_amount: {itousd(sum([perf['amount'] for perf in data['performances']]))}$\n";
 	ret += f"Accumulated points: {get_total_volume_credits(data['performances'])}points\n";
 	return (ret);
 
@@ -32,8 +29,9 @@ def render_plain_text(data):
 def statement(invoice):
 	context_data = {};
 	context_data["customer"] = invoice["customer"];
-	set_play = lambda el: (el.update({"play":play_for(el)}) or el);
-	context_data["performances"] = [perf for perf in map(set_play, invoice["performances"])];
+	set_perfs = lambda el: ((el.update({"play":play_for(el)}) or el.update({"amount":amount_for(el)})) or el);
+	context_data["performances"] = [perf for perf in map(set_perfs, invoice["performances"])];
+
 	return render_plain_text(context_data);
 
 
