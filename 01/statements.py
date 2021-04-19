@@ -20,7 +20,7 @@ def render_plain_text(data):
 	total_amount = 0;
 	ret = f"state detail(Username: {data['customer']})\n";
 	for perf in data["performances"]:
-		this_amount = amount_for(perf, play_for(perf));
+		this_amount = amount_for(perf, perf["play"]);
 		ret += f" {play_for(perf)['name']}: {itousd(this_amount)}$ {perf['audience']}audiences\n";
 		total_amount += this_amount;
 
@@ -32,7 +32,8 @@ def render_plain_text(data):
 def statement(invoice):
 	context_data = {};
 	context_data["customer"] = invoice["customer"];
-	context_data["performances"] = [perf for perf in map(lambda el: el, invoice["performances"])];
+	set_play = lambda el: (el.update({"play":play_for(el)}) or el);
+	context_data["performances"] = [perf for perf in map(set_play, invoice["performances"])];
 	return render_plain_text(context_data);
 
 

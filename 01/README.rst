@@ -2,13 +2,16 @@
 -----
 specs
 ^^^^^
-   - Extract/statements.statements/get text
+   - Extract/statements.statement/get text
       - New/statements.render_plain_text
    - Refactor/statements.render_plain_text
       - customer data now depends on caller function.
       - performance data depends on caller function.
          - Set performace list data as newly generated one(to protect original).
       - remove parameter invoice in render_plain_text.
+      - make not to use external functions directly to parse advanced context_data
+   - Refactor/statements.statement
+      - context_data sets ``{play: play_data by playid}`` by this function.
 
 need improve
 ^^^^^^^^^^^^
