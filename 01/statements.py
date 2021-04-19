@@ -32,7 +32,7 @@ def render_plain_text(data):
 def statement(invoice):
 	context_data = {};
 	context_data["customer"] = invoice["customer"];
-	context_data["performances"] = invoice["performances"];
+	context_data["performances"] = [perf for perf in map(lambda el: el, invoice["performances"])];
 	return render_plain_text(context_data);
 
 

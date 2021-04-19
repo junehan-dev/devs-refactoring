@@ -7,6 +7,7 @@ specs
    - Refactor/statements.render_plain_text
       - customer data now depends on caller function.
       - performance data depends on caller function.
+         - Set performace list data as newly generated one(to protect original).
       - remove parameter invoice in render_plain_text.
 
 need improve
