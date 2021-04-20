@@ -7,6 +7,11 @@ specs
    #. NEW/statements/ ``get_total_amount(perfs)``
       inline ``sum`` function call allocation -> substituted to explicit function. (just as another data.)
 
+need improve
+^^^^^^^^^^^^
+   - extract functions which formats and render to be in another file.
+   - context_data setter to stay in *statements.py*
+
 0.23a
 -----
 specs
