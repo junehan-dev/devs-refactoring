@@ -9,11 +9,13 @@ def get_volume_credit(perf):
 	return (result);
 
 
+from functools import reduce
 def get_total_volume_credits(perfs):
-	result = 0;
-	for perf in perfs:
-		result += get_volume_credit(perf);
-	return (result);
+	return reduce(lambda p, perf: p + get_volume_credit(perf), perfs, 0);
+
+
+def get_total_amount(perfs):
+	return sum((perf['amount'] for perf in perfs));
 
 
 def render_plain_text(data):
@@ -31,7 +33,7 @@ def statement(invoice):
 	context_data["customer"] = invoice["customer"];
 	set_perfs = lambda el: ((el.update({"play":play_for(el)}) or el.update({"amount":amount_for(el)})) or el);
 	context_data["performances"] = [perf for perf in map(set_perfs, invoice["performances"])];
-	context_data["total_amount"] = sum((perf['amount'] for perf in context_data['performances']));
+	context_data["total_amount"] = get_total_amount(context_data["performances"]);
 	context_data['total_volume_credits'] = get_total_volume_credits(context_data['performances']);
 	return render_plain_text(context_data);
 

@@ -1,3 +1,12 @@
+0.23b
+-----
+specs
+^^^^^
+   1. Refactor/statements/ ``get_total_volume_credits``
+      mainly run by ``functools.reduce``
+   #. NEW/statements/ ``get_total_amount(perfs)``
+      inline ``sum`` function call allocation -> substituted to explicit function. (just as another data.)
+
 0.23a
 -----
 specs
