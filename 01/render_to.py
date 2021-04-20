@@ -21,6 +21,7 @@ def itousd(amount):
 	dest[i] = src[offset:];
 	return ("".join(dest));
 
+
 def render_plain_text(data):
 	ret = f"state detail(Username: {data['customer']})\n";
 	for perf in data["performances"]:
@@ -29,6 +30,27 @@ def render_plain_text(data):
 	ret += f"total_amount: {itousd(data['total_amount'])}$\n";
 	ret += f"Accumulated points: {data['total_volume_credits']}points\n";
 	return (ret);
+
+
+def render_html(data):
+	from functools import reduce
+
+	ret = f"<h1>statement Detail {data['customer']}</h1>\n";
+	ret += "<table>\n";
+	ret += "<tr><th>Play</th><th>Seats</th><th>price</th></tr>\n";
+	ret += reduce(
+		lambda a, b: a + """<tr>
+		<td>{perf['play']['name']}</td>
+		<td>{perf['audience']}seats</td>
+		<td>{itousd(perf['amount'])}</td>
+		</tr>\n""",
+		(perf for perf in data["performances"]), ""
+	);
+	ret += "</table>\n";
+	ret += "<p>total: <em>{itousd(data['total_amount'])}</em></p>\n";
+	ret += "<p>points: <em>{itousd(data['total_volume_credits'])}</em></p>\n";
+	return (ret);
+		
 
 if __name__ == "__main__":
 	import json
@@ -39,6 +61,10 @@ if __name__ == "__main__":
 
 	for invoice in invoices:
 		print(render_plain_text(statement(invoice)));
+	for invoice in invoices:
+		print(render_html(statement(invoice)));
+
+
 
 	exit(0);
 

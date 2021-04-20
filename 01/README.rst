@@ -12,6 +12,8 @@ specs
          - ``get_total_amount(perfs)``
          - ``play_for(aPerformance)``
          - ``statement(invoice)``
+   #. NEW/render_to/
+      *render_html* returns htmls formatted string
 
 0.23b
 -----
