@@ -1,3 +1,35 @@
+0.3rc
+-----
+specs
+^^^^^
+   1. Extracted functions for format strings.
+      - *render_to.py*
+         - ``itousd(amount)``
+         - ``render_plain_text(data)``
+      - *statements.py*
+         - ``get_volume_credit(perf)``
+         - ``get_total_volume_credits(perfs)``
+         - ``get_total_amount(perfs)``
+         - ``play_for(aPerformance)``
+         - ``statement(invoice)``
+   #. NEW/render_to/
+      *render_html* returns htmls formatted string
+
+0.23b
+-----
+specs
+^^^^^
+   1. Refactor/statements/ ``get_total_volume_credits``
+      mainly run by ``functools.reduce``
+   #. NEW/statements/ ``get_total_amount(perfs)``
+      inline ``sum`` function call allocation -> substituted to explicit function. (just as another data.)
+
+need improve
+^^^^^^^^^^^^
+   - context_data generator stay in *statements.py*
+   - extract functions which formats and render to be in another file.
+      - add ``render_html(data)`` to above.
+
 0.23a
 -----
 specs
