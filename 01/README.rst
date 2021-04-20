@@ -9,8 +9,9 @@ specs
 
 need improve
 ^^^^^^^^^^^^
+   - context_data generator stay in *statements.py*
    - extract functions which formats and render to be in another file.
-   - context_data setter to stay in *statements.py*
+      - add ``render_html(data)`` to above.
 
 0.23a
 -----
