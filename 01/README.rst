@@ -1,3 +1,18 @@
+0.3rc
+-----
+specs
+^^^^^
+   1. Extracted functions for format strings.
+      - *render_to.py*
+         - ``itousd(amount)``
+         - ``render_plain_text(data)``
+      - *statements.py*
+         - ``get_volume_credit(perf)``
+         - ``get_total_volume_credits(perfs)``
+         - ``get_total_amount(perfs)``
+         - ``play_for(aPerformance)``
+         - ``statement(invoice)``
+
 0.23b
 -----
 specs
