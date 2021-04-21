@@ -39,16 +39,16 @@ def render_html(data):
 	ret += "<table>\n";
 	ret += "<tr><th>Play</th><th>Seats</th><th>price</th></tr>\n";
 	ret += reduce(
-		lambda a, b: a + """<tr>
+		lambda a, perf: a + f"""<tr>
 		<td>{perf['play']['name']}</td>
 		<td>{perf['audience']}seats</td>
 		<td>{itousd(perf['amount'])}</td>
 		</tr>\n""",
 		(perf for perf in data["performances"]), ""
 	);
-	ret += "</table>\n";
-	ret += "<p>total: <em>{itousd(data['total_amount'])}</em></p>\n";
-	ret += "<p>points: <em>{itousd(data['total_volume_credits'])}</em></p>\n";
+	ret += f"</table>\n";
+	ret += f"<p>total: <em>{itousd(data['total_amount'])}</em></p>\n";
+	ret += f"<p>points: <em>{itousd(data['total_volume_credits'])}</em></p>\n";
 	return (ret);
 		
 
