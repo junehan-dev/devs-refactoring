@@ -5,6 +5,8 @@ specs
    - Extract, ``statements.statement``
       1. Extract setting rich data in ``context_data["performances"]`` as ``statements.enrich_perf(perf)``
       #. Marked ``perf["amount"]`` to be modified as Docstring at line 29.
+      #. Set up variable play in ``statement.enrich_perf(perf)``.
+      #. setup class and class call, for methods parameter.
 
 need improve
 ^^^^^^^^^^^^

@@ -3,6 +3,15 @@ from functools import reduce
 
 _plays = None;
 
+class PerformanceCalulator:
+	def __init__(self, aPerformance, aPlay):
+		self.performance = aPerformance;
+		self.play = aPlay;
+
+	def get_amount(self): #todo 1
+		return amount_for(self.aPlay);
+
+
 def get_volume_credit(perf):
 	result = max((perf["audience"] - 30, 0));
 	if (perf["play"]["type"] == "comedy"):
@@ -23,15 +32,10 @@ def play_for(aPerformance):
 
 
 def enrich_perf(perf):
-	perf.update({"play": play_for(perf)});
-	perf.update({"amount": amount_for(perf)}); # todo1
-	"""substitute above in next as below
-	class PerformanceCalulator: # Global
-		def __init__(self, aPerformance):
-			self.performance = aPerformance;
-
-	calcuator = PerformanceCalculator(perf); # in enrich_perf
-	"""
+	play = play_for(perf);
+	perf.update({"play": play});
+	perf.update({"amount": amount_for(perf)});
+	#calcuator = PerformanceCalculator(perf, play); # todo 2
 	return (perf);
 
 
