@@ -1,3 +1,22 @@
+0.31a
+-----
+specs
+^^^^^
+   - Extract, ``statements.statement``
+      1. Extract setting rich data in ``context_data["performances"]`` as ``statements.enrich_perf(perf)``
+      #. Marked ``perf["amount"]`` to be modified as Docstring at line 29.
+
+need improve
+^^^^^^^^^^^^
+
+Check point 0.3->0.31
+---------------------
+need improve
+^^^^^^^^^^^^
+   - prepare calculations after new genre added.
+   - amounts.amount_for function is if condition based, diverse return function.
+      - These kind of work makes code trashful when it goes modified for more.
+
 0.3rc
 -----
 specs
