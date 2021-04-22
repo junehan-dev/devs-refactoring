@@ -5,6 +5,9 @@ specs
    - ``PerformanceCalculator.get_amount()`` uses amount_for function.
    - ``amounts.amount_for(aPerf)``  rename to -> ``amounts._amount_for(aPerf)``
    - rename amounts to performances.py
+   - instance of ``PerformanceCalucaltor`` substituted setting ``enrich_perf(perf)``
+   - ``render_to.{render_html, render_plain_text}``
+      - fixed all accessing like ``perf["play"]`` to property access like ``perf.play``
 
 0.31a
 -----
