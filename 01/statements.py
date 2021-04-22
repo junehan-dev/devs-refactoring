@@ -1,5 +1,4 @@
-from amounts import PerformanceCalculator
-from amounts import _amount_for as amount_for
+from performances import PerformanceCalculator
 from functools import reduce
 
 _plays = None;

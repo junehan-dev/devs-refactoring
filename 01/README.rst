@@ -8,6 +8,9 @@ specs
    - instance of ``PerformanceCalucaltor`` substituted setting ``enrich_perf(perf)``
    - ``render_to.{render_html, render_plain_text}``
       - fixed all accessing like ``perf["play"]`` to property access like ``perf.play``
+      - removed ``amounts._amounts_for()``
+   - renamed file *amounts.py* to *performances.py*.
+      - amounts calculating is not main functionality in that module anymore.
 
 0.31a
 -----
