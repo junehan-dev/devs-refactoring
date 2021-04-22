@@ -1,4 +1,13 @@
-def amount_for(aPerformance):
+class PerformanceCalculator:
+	def __init__(self, aPerformance, aPlay):
+		self.performance = aPerformance;
+		self.play = aPlay;
+
+	def get_amount(self):
+		return _amount_for(self.aPlay);
+
+
+def _amount_for(aPerformance):
 	"""Returns cost of aPerformanceormanced unit
 		Arguments:
 			aPerformance
@@ -21,3 +30,5 @@ def amount_for(aPerformance):
 	else:
 		raise ValueError(f"Unknown genre: {aPerformance['play']['type']}");
 	return (result);
+
+

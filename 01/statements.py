@@ -1,15 +1,8 @@
-from amounts import amount_for
+from amounts import PerformanceCalculator
+from amounts import _amount_for as amount_for
 from functools import reduce
 
 _plays = None;
-
-class PerformanceCalulator:
-	def __init__(self, aPerformance, aPlay):
-		self.performance = aPerformance;
-		self.play = aPlay;
-
-	def get_amount(self): #todo 1
-		return amount_for(self.aPlay);
 
 
 def get_volume_credit(perf):
@@ -35,7 +28,7 @@ def enrich_perf(perf):
 	play = play_for(perf);
 	perf.update({"play": play});
 	perf.update({"amount": amount_for(perf)});
-	#calcuator = PerformanceCalculator(perf, play); # todo 2
+	#calcuator = PerformanceCalculator(perf, play); # todo1
 	return (perf);
 
 

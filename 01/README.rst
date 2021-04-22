@@ -1,3 +1,11 @@
+0.31b
+-----
+specs
+^^^^^
+   - ``PerformanceCalculator.get_amount()`` uses amount_for function.
+   - ``amounts.amount_for(aPerf)``  rename to -> ``amounts._amount_for(aPerf)``
+   - rename amounts to performances.py
+
 0.31a
 -----
 specs
