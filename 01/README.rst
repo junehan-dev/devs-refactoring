@@ -1,3 +1,46 @@
+0.31b
+-----
+specs
+^^^^^
+   - ``PerformanceCalculator.get_amount()`` uses amount_for function.
+   - ``amounts.amount_for(aPerf)``  rename to -> ``amounts._amount_for(aPerf)``
+   - rename amounts to performances.py
+   - instance of ``PerformanceCalucaltor`` substituted setting ``enrich_perf(perf)``
+   - ``render_to.{render_html, render_plain_text}``
+      - fixed all accessing like ``perf["play"]`` to property access like ``perf.play``
+      - removed ``amounts._amounts_for()``
+   - renamed file *amounts.py* to *performances.py*.
+      - amounts calculating is not main functionality in that module anymore.
+   - set ``PerformanceCalculator`` instance to accesible to it's volume credit.
+      - ``statements.get_volume_credit(perf)`` depends on not it's logic, but ``perf.volume_credit``
+
+need improve
+^^^^^^^^^^^^
+   - 
+
+0.31a
+-----
+specs
+^^^^^
+   - Extract, ``statements.statement``
+      1. Extract setting rich data in ``context_data["performances"]`` as ``statements.enrich_perf(perf)``
+      #. Marked ``perf["amount"]`` to be modified as Docstring at line 29.
+      #. Set up variable play in ``statement.enrich_perf(perf)``.
+      #. setup class and class call, for methods parameter.
+
+need improve
+^^^^^^^^^^^^
+   - finish ``PerformanceCaulator`` class
+      To substitute feature for setting up performace's amount and volume_credit
+
+Check point 0.3->0.31
+---------------------
+need improve
+^^^^^^^^^^^^
+   - prepare calculations after new genre added.
+   - amounts.amount_for function is if condition based, diverse return function.
+      - These kind of work makes code trashful when it goes modified for more.
+
 0.3rc
 -----
 specs
