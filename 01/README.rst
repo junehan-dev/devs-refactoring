@@ -10,6 +10,8 @@ specs
 
 need improve
 ^^^^^^^^^^^^
+   - finish ``PerformanceCaulator`` class
+      To substitute feature for setting up performace's amount and volume_credit
 
 Check point 0.3->0.31
 ---------------------
