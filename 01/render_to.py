@@ -48,7 +48,7 @@ def render_html(data):
 	);
 	ret += f"</table>\n";
 	ret += f"<p>total: <em>{itousd(data['total_amount'])}</em></p>\n";
-	ret += f"<p>points: <em>{itousd(data['total_volume_credits'])}</em></p>\n";
+	ret += f"<p>points: <em>{data['total_volume_credits']}</em></p>\n";
 	return (ret);
 		
 

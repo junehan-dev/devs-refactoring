@@ -16,6 +16,13 @@ class PerformanceCalculator:
 	def audience(self):
 		return (self.performance["audience"]);
 
+	@property
+	def volume_credit(self):
+		result = max((self.audience - 30, 0));
+		if (self.play["type"] == "comedy"):
+			result += int(self.audience / 5);
+		return (result);
+
 	def _amount(self):
 		"""Returns cost of aPerformanceormanced unit
 			Exceptions:

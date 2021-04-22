@@ -5,10 +5,7 @@ _plays = None;
 
 
 def get_volume_credit(perf):
-	result = max((perf.audience - 30, 0));
-	if (perf.play["type"] == "comedy"):
-		result += int(perf.audience / 5);
-	return (result);
+	return perf.volume_credit;
 
 
 def get_total_volume_credits(perfs):
@@ -24,8 +21,8 @@ def play_for(aPerformance):
 
 
 def enrich_perf(perf):
-	result = PerformanceCalculator(perf, play_for(perf));
-	return (result);
+	perf_calculator = PerformanceCalculator(perf, play_for(perf));
+	return (perf_calculator);
 
 
 def statement(invoice):
