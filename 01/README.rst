@@ -14,11 +14,9 @@ specs
    - set ``PerformanceCalculator`` instance to accesible to it's volume credit.
       - ``statements.get_volume_credit(perf)`` depends on not it's logic, but ``perf.volume_credit``
 
-
 need improve
 ^^^^^^^^^^^^
    - 
-
 
 0.31a
 -----
