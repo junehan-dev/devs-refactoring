@@ -1,3 +1,6 @@
+from abc import ABC
+
+
 class PerformanceCalculator:
 	def __init__(self, aPerformance, aPlay):
 		self._performance = aPerformance;
@@ -47,3 +50,8 @@ class PerformanceCalculator:
 	def amount(self):
 		return self._amount();
 
+class ComedyCalculator(PerformanceCalculator):
+	pass
+
+class TragedyCalculator(PerformanceCalculator):
+	pass

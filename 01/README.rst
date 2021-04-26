@@ -1,3 +1,14 @@
+0.31rc
+------
+specs
+^^^^^
+   1. ``statements.enrich_perf`` choice sub-class depend on perf.type stirng.
+      1. ``performances.TragedyCalculator``
+      #. ``performances.ComedyCalculator``
+
+need improve
+^^^^^^^^^^^^
+
 0.31b
 -----
 specs

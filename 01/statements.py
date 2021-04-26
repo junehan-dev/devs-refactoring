@@ -1,4 +1,4 @@
-from performances import PerformanceCalculator
+from performances import ComedyCalculator, TragedyCalculator
 from functools import reduce
 
 _plays = None;
@@ -21,8 +21,15 @@ def play_for(aPerformance):
 
 
 def enrich_perf(perf):
-	perf_calculator = PerformanceCalculator(perf, play_for(perf));
-	return (perf_calculator);
+	ret = None;
+	play = play_for(perf);
+	if (play["type"] == "tragedy"):
+		ret = TragedyCalculator(perf, play);
+	elif (play["type"] == "comedy"):
+		ret = ComedyCalculator(perf, play);
+	else:
+		raise ValueError("Invalid play Type!");
+	return (ret);
 
 
 def statement(invoice):
