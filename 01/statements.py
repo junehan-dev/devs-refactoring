@@ -9,7 +9,7 @@ def get_volume_credit(perf):
 
 
 def get_total_volume_credits(perfs):
-	return reduce(lambda p, perf: p + get_volume_credit(perf), perfs, 0);
+	return reduce(lambda p, perf: p + perf.volume_credit, perfs, 0);
 
 
 def get_total_amount(perfs):

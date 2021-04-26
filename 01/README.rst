@@ -13,10 +13,13 @@ specs
       - amounts calculating is not main functionality in that module anymore.
    - set ``PerformanceCalculator`` instance to accesible to it's volume credit.
       - ``statements.get_volume_credit(perf)`` depends on not it's logic, but ``perf.volume_credit``
+         - ``statements.get_total_volume_credits(perfs)`` logic change as above.
 
 need improve
 ^^^^^^^^^^^^
-   - 
+   - change ``performances.PerformanceCalculator`` as inhertance version.
+      - Make subclasses for that.
+      - Make ``statements.statement`` to use that subclass not origin class.
 
 0.31a
 -----
