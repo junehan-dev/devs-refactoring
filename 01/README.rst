@@ -7,9 +7,9 @@ specs
       #. ``performances.ComedyCalculator``
    #. 2 class in *performances* overrides ``_amount(self);`` method.
       - Made constraint on ``PerformanceCalculator`` to use only subclassed class.
-
-need improve
-^^^^^^^^^^^^
+   #. *statements/* ``ComedyCalculator.volume_credit`` overriden.
+      - Only Comedy type has additional credits based on origin.
+      - ``PerformanceCalculator.volume_credit`` now returns default credit only.
 
 0.31b
 -----

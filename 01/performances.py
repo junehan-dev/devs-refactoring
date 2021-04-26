@@ -21,10 +21,7 @@ class PerformanceCalculator(metaclass = ABCMeta):
 
 	@property
 	def volume_credit(self):
-		result = max((self.audience - 30, 0));
-		if (self.play["type"] == "comedy"):
-			result += int(self.audience / 5);
-		return (result);
+		return (max((self.audience - 30, 0)));
 
 	@abstractmethod
 	def _amount(self):
@@ -48,6 +45,11 @@ class ComedyCalculator(PerformanceCalculator):
 			result += (1000 + 500 * (self.audience - 20));
 		result += 300 * self.audience;
 		return (result);
+
+	@property
+	def volume_credit(self):
+		return super().volume_credit + int(self.audience/5);
+
 
 class TragedyCalculator(PerformanceCalculator):
 	def __init__(self, aPerf, play):
