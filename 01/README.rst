@@ -5,6 +5,8 @@ specs
    1. ``statements.enrich_perf`` choice sub-class depend on perf.type stirng.
       1. ``performances.TragedyCalculator``
       #. ``performances.ComedyCalculator``
+   #. 2 class in *performances* overrides ``_amount(self);`` method.
+      - Made constraint on ``PerformanceCalculator`` to use only subclassed class.
 
 need improve
 ^^^^^^^^^^^^

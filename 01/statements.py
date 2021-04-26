@@ -21,7 +21,6 @@ def play_for(aPerformance):
 
 
 def enrich_perf(perf):
-	ret = None;
 	play = play_for(perf);
 	if (play["type"] == "tragedy"):
 		ret = TragedyCalculator(perf, play);

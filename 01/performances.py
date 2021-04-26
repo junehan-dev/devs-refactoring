@@ -1,7 +1,7 @@
-from abc import ABC
+from abc import ABCMeta, abstractmethod
 
 
-class PerformanceCalculator:
+class PerformanceCalculator(metaclass = ABCMeta):
 	def __init__(self, aPerformance, aPlay):
 		self._performance = aPerformance;
 		self._play = aPlay;
@@ -26,32 +26,35 @@ class PerformanceCalculator:
 			result += int(self.audience / 5);
 		return (result);
 
+	@abstractmethod
 	def _amount(self):
 		"""Returns cost of aPerformanceormanced unit
 			Exceptions:
 				ValueError
 					case when play is invalid
 		"""
-		result = 0;
-		if (self.play["type"] == "tragedy"):	
-			result += 40000;
-			if (self.audience > 30):
-				result += 1000 * (self.audience - 30);
-		elif (self.play["type"] == "comedy"):
-			result += 30000;
-			if (self.audience > 20):
-				result += (1000 + 500 * (self.audience - 20));
-			result += 300 * self.audience;
-		else:
-			raise ValueError(f"Unknown genre: {self.play['type']}");
-		return (result);
 
 	@property
 	def amount(self):
 		return self._amount();
 
 class ComedyCalculator(PerformanceCalculator):
-	pass
+	def __init__(self, aPerf, play):
+		super().__init__(aPerf, play);
+
+	def _amount(self):
+		result = 30000;
+		if (self.audience > 20):
+			result += (1000 + 500 * (self.audience - 20));
+		result += 300 * self.audience;
+		return (result);
 
 class TragedyCalculator(PerformanceCalculator):
-	pass
+	def __init__(self, aPerf, play):
+		super().__init__(aPerf, play);
+
+	def _amount(self):
+		result = 40000;
+		if (self.audience > 30):
+			result += 1000 * (self.audience - 30);
+		return (result);
