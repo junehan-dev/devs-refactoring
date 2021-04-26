@@ -1,4 +1,4 @@
-from performances import PerformanceCalculator
+from performances import ComedyCalculator, TragedyCalculator
 from functools import reduce
 
 _plays = None;
@@ -9,7 +9,7 @@ def get_volume_credit(perf):
 
 
 def get_total_volume_credits(perfs):
-	return reduce(lambda p, perf: p + get_volume_credit(perf), perfs, 0);
+	return reduce(lambda p, perf: p + perf.volume_credit, perfs, 0);
 
 
 def get_total_amount(perfs):
@@ -21,8 +21,14 @@ def play_for(aPerformance):
 
 
 def enrich_perf(perf):
-	perf_calculator = PerformanceCalculator(perf, play_for(perf));
-	return (perf_calculator);
+	play = play_for(perf);
+	if (play["type"] == "tragedy"):
+		ret = TragedyCalculator(perf, play);
+	elif (play["type"] == "comedy"):
+		ret = ComedyCalculator(perf, play);
+	else:
+		raise ValueError("Invalid play Type!");
+	return (ret);
 
 
 def statement(invoice):

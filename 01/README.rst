@@ -1,3 +1,16 @@
+0.31rc
+------
+specs
+^^^^^
+   1. ``statements.enrich_perf`` choice sub-class depend on perf.type stirng.
+      1. ``performances.TragedyCalculator``
+      #. ``performances.ComedyCalculator``
+   #. 2 class in *performances* overrides ``_amount(self);`` method.
+      - Made constraint on ``PerformanceCalculator`` to use only subclassed class.
+   #. *statements/* ``ComedyCalculator.volume_credit`` overriden.
+      - Only Comedy type has additional credits based on origin.
+      - ``PerformanceCalculator.volume_credit`` now returns default credit only.
+
 0.31b
 -----
 specs
@@ -13,10 +26,13 @@ specs
       - amounts calculating is not main functionality in that module anymore.
    - set ``PerformanceCalculator`` instance to accesible to it's volume credit.
       - ``statements.get_volume_credit(perf)`` depends on not it's logic, but ``perf.volume_credit``
+         - ``statements.get_total_volume_credits(perfs)`` logic change as above.
 
 need improve
 ^^^^^^^^^^^^
-   - 
+   - change ``performances.PerformanceCalculator`` as inhertance version.
+      - Make subclasses for that.
+      - Make ``statements.statement`` to use that subclass not origin class.
 
 0.31a
 -----

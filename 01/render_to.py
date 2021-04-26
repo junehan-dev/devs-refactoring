@@ -64,7 +64,5 @@ if __name__ == "__main__":
 	for invoice in invoices:
 		print(render_html(statement(invoice)));
 
-
-
 	exit(0);
 
