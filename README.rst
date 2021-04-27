@@ -11,9 +11,26 @@ Recommodation by Erich Gamma(author of GOF, VScode, Junit, Eclipes)
 
 01
 --
+Refactoring: First Example Practice
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   - *Extracting function*
+      - When Extracting function Take a good care of local variable's validity.
+   - *Inlining variable*
+   - *Function Move*
+   - *Convert condition-logic to polymorphism*
 
-Extracting function
-^^^^^^^^^^^^^^^^^^^
-   *When Extracting function*
-      Take a good care of local variable's validity.
-
+02
+--
+Refactoring Principles
+^^^^^^^^^^^^^^^^^^^^^^
+   1. Definition of refactoring
+   #. The two hats by kent beck
+   #. Reasons for refactoring
+   #. When to refactor?
+   #. Considerable problems
+   #. Refactoring, Architecture, YAGNI
+   #. Refactoring and Software development process
+   #. Refactoring and Performance
+   #. Origination of refactoring
+   #. Refactoring automation
+   #. More
