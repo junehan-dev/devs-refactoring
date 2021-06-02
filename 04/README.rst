@@ -1,3 +1,10 @@
+FIX/0.1b
+--------
+changed
+^^^^^^^
+   - map object did not 
+
+
 INIT(0.1)
 ---------
 specs
