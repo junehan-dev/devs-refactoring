@@ -1,4 +1,5 @@
 from producer import Producer
+from collections import namedtuple
 
 class Province:
 	def __init__(self, doc):
@@ -7,7 +8,7 @@ class Province:
 		self._total_production = 0;
 		self._demand = doc.demand;
 		self._price = doc.price;
-		map(lambda pd: self.add_producer(Producer(self, pd)), doc.producers);
+		[_ for _ in map(lambda pd: self.add_producer(Producer(self, pd)), doc.producers)];
 
 	@property
 	def name(self):
@@ -20,7 +21,7 @@ class Province:
 		return (self._total_production);
 	@total_production.setter
 	def total_production(self, v):
-		this._total_production = v;
+		self._total_production = v;
 	@property
 	def demand(self):
 		return (self._demand);
@@ -35,13 +36,13 @@ class Province:
 		self._price = int(v);
 	@property
 	def satisfied_demand(self):
-		return (min((self.demand, self.total_production)));
+		return min((self.demand, self.total_production));
 	@property
 	def demand_value(self):
 		return (self.satisfied_demand * self.price);
 	@property
 	def shortfall(self):
-		return (this.demand - this.total_production);
+		return (self.demand - self.total_production);
 	@property
 	def demand_cost(self):
 		remain = self.demand;
@@ -55,23 +56,32 @@ class Province:
 		return (sum(contributions));
 	@property
 	def profit(self):
-		return (this.demand_value - this.demand_cost);
+		return (self.demand_value - self.demand_cost);
 
 	def add_producer(self, producer):
 		self._producers = ((producer,) + self._producers);
 		self.total_production += producer.production;
 
 def get_sample_province():
-	return ({
-		name : "Asia",
-		producers: (
-				{ name : "Byzantium", cost : 10, production : 9 },
-				{ name : "Attalia", cost : 12, production : 10 },
-				{ name : "Sinope", cost : 10, production : 6 },
-			),
-		demand : 30,
-		price : 20,
-	});
-
-
+	_province = namedtuple('province_data',
+		("name", "producers", "demand", "price")
+	);
+	_producer = namedtuple('producer_data',
+		("name", "cost", "production")
+	);
+	producers = (
+		_producer(
+			name = "Byzantium", cost = 10, production = 9),
+		_producer(
+			name = "Attalia", cost = 12, production = 10),
+		_producer(
+			name = "Sinope", cost = 10, production = 6),
+	);
+	ret = _province(
+		name = "Asia",
+		producers = producers,
+		demand = 30,
+		price = 20,
+	);
+	return (ret);
 
