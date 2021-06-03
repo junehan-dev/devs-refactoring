@@ -28,5 +28,16 @@ class ProvinceTestCase(unittest.TestCase):
 		"""
 		self.assertEqual(self.asia.shortfall, 5);
 
+from province import gen_producer, gen_province
+class ProvinceNegativeTestCase(unittest.TestCase):
+	def test_no_prods(self):
+		desert_data = gen_province("desert", [], 30, 20);
+		desert = Province(desert_data);
+		self.assertEqual(desert.shortfall, 30);
+		desert.demand = 0;
+		self.assertEqual(desert.shortfall, -25);
+		self.assertEqual(desert.profit, 0);
+		self.assertEqual(desert.demand, 0);
+		
 if __name__ == "__main__":
 	unittest.main();
