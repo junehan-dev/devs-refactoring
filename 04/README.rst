@@ -4,7 +4,8 @@ specs
 ^^^^^
    1. Test/test_total_production
    #. Test/test_shortfall
-   #. Test/test_profit to be failed
+   #. Test/test_profit
+   #. Test/test_change_production
 
 fixes
 ^^^^^
