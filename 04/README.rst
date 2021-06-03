@@ -6,6 +6,7 @@ specs
    #. Test/test_shortfall
    #. Test/test_profit
    #. Test/test_change_production
+   #. Test/test_change_production/added additional check
 
 fixes
 ^^^^^
