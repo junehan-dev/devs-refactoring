@@ -5,8 +5,10 @@ specs
    1. Test/test_total_production
    #. Test/test_shortfall
    #. Test/test_profit
-   #. Test/test_change_production
-   #. Test/test_change_production/added additional check
+   #. Test/test_change_production **RENAMED**
+      - Test/RENAME/test_change_production to test_diff_prod_to_shortfall
+   #. Test/test_change_production/added additional check **MOVED**
+      - Test/MOVE/test_change_production added to test_diff_prod_to_profit
 
 fixes
 ^^^^^
@@ -15,6 +17,7 @@ fixes
 
 need improve
 ^^^^^^^^^^^^
+   1. AT/SPECS.5/Continous testing with single fixture better to avoid **, SOLVED**
 
 INIT(0.1)
 ---------
