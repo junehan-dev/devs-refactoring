@@ -1,4 +1,4 @@
-name: GitHub Actions Demo
+name: GitHub Actions Test Province
 on: [push]
 jobs:
   Explore-GitHub-Actions:
@@ -14,4 +14,7 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - name: Test Python Coverage
+        run: |
+          python ./04/test_province.py
       - run: echo "🍏 This job's status is ${{ job.status }}."
