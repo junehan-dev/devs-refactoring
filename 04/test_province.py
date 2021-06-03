@@ -8,7 +8,7 @@ class ProvinceTestCase(unittest.TestCase):
 
 	def	test_diff_prod_to_profit(self):
 		self.asia.producers[0].production = 20;
-		self.assertEqual(self.asia.profit, 0);
+		self.assertEqual(self.asia.profit, -260);
 
 	def test_diff_prod_to_shortfall(self):
 		self.asia.producers[0].production = 20;
