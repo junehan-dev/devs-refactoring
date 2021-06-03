@@ -6,6 +6,9 @@ class ProvinceTestCase(unittest.TestCase):
 	def setUp(self):
 		self.asia = Province(get_sample_province());
 
+	def test_profit(self):
+		self.assertEqual(self.asia.profit, 0);
+
 	def test_total_production(self):
 		"""test getter.total_production
 		"""

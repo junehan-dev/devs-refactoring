@@ -2,8 +2,9 @@ FIX/0.101a
 ----------
 specs
 ^^^^^
-   1 . Test/test_total_production
+   1. Test/test_total_production
    #. Test/test_shortfall
+   #. Test/test_profit to be failed
 
 fixes
 ^^^^^
@@ -12,7 +13,6 @@ fixes
 
 need improve
 ^^^^^^^^^^^^
-   1. DUPLICATED/test asset/Generating Province instance for each.
 
 INIT(0.1)
 ---------
@@ -35,5 +35,5 @@ need improve
    1. ``<class Producer>._province`` **, UNSOLVED**
       - Delegation on Producer._province is too much.
       - Test does make self-reflecting for us.
-   #. ``get_sample_province`` **, UNSOLVED**
+   #. ``get_sample_province`` **, SOLVED**
       - Creates sample province but also producers included.
