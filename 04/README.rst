@@ -1,4 +1,14 @@
-FIX/0.101a
+FIX/0.102a
+----------
+todos
+^^^^^
+   1. no producers on province instance
+   #. demand zero for province instance
+   #. demand negative on province instance
+   #. Type error on input for province instance
+   #. substitute some tests with assertions
+
+FIX/0.101rc
 ----------
 specs
 ^^^^^
@@ -14,10 +24,11 @@ fixes
 ^^^^^
    1. province/Province.init/Map object did not executed **, SOLVED**
       - Changed to list comprehension.(lazy eval not needed)
+   #. AT/SPECS.5/Continous testing with single fixture better to avoid **, SOLVED**
 
 need improve
 ^^^^^^^^^^^^
-   1. AT/SPECS.5/Continous testing with single fixture better to avoid **, SOLVED**
+   1. Boundary Condition test Needed (ie, zero value input, Type errror input)
 
 INIT(0.1)
 ---------
