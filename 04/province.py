@@ -8,7 +8,7 @@ class Province:
 		self._total_production = 0;
 		self._demand = doc.demand;
 		self._price = doc.price;
-		[_ for _ in map(lambda pd: self.add_producer(Producer(self, pd)), doc.producers)];
+		[self.add_producer(Producer(self, pd)) for pd in doc.producers]
 
 	@property
 	def name(self):
@@ -63,25 +63,31 @@ class Province:
 		self.total_production += producer.production;
 
 def get_sample_province():
-	_province = namedtuple('province_data',
+	_province = namedtuple(
+		'province_data',
 		("name", "producers", "demand", "price")
 	);
-	_producer = namedtuple('producer_data',
+	_producer = namedtuple(
+		'producer_data',
 		("name", "cost", "production")
 	);
+
 	producers = (
 		_producer(
-			name = "Byzantium", cost = 10, production = 9),
-		_producer(
-			name = "Attalia", cost = 12, production = 10),
-		_producer(
-			name = "Sinope", cost = 10, production = 6),
+			name = "Byzantium", cost = 10, production = 9
+		), _producer(
+			name = "Attalia", cost = 12, production = 10
+		), _producer(
+			name = "Sinope", cost = 10, production = 6
+		),
 	);
+
 	ret = _province(
 		name = "Asia",
 		producers = producers,
 		demand = 30,
 		price = 20,
 	);
+
 	return (ret);
 

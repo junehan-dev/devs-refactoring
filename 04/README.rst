@@ -1,9 +1,18 @@
-FIX/0.1b
---------
-changed
-^^^^^^^
-   - map object did not 
+FIX/0.101a
+----------
+specs
+^^^^^
+   1. Test/test_total_production
+   #. Test/test_shortfall
 
+fixes
+^^^^^
+   1. province/Province.init/Map object did not executed
+      - Changed to list comprehension.(lazy eval not needed)
+
+need improve
+^^^^^^^^^^^^
+   1. DUPLICATED/test asset/Generating Province instance for each.
 
 INIT(0.1)
 ---------
@@ -23,8 +32,8 @@ specs
 
 need improve 
 ^^^^^^^^^^^^
-   1. ``<class Producer>._province``
+   1. ``<class Producer>._province`` **, UNSOLVED**
       - Delegation on Producer._province is too much.
       - Test does make self-reflecting for us.
-   #. ``get_sample_province``
+   #. ``get_sample_province`` **, UNSOLVED**
       - Creates sample province but also producers included.
