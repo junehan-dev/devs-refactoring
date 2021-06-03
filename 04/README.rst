@@ -2,12 +2,12 @@ FIX/0.101a
 ----------
 specs
 ^^^^^
-   1. Test/test_total_production
+   1 . Test/test_total_production
    #. Test/test_shortfall
 
 fixes
 ^^^^^
-   1. province/Province.init/Map object did not executed
+   1. province/Province.init/Map object did not executed **, SOLVED**
       - Changed to list comprehension.(lazy eval not needed)
 
 need improve
