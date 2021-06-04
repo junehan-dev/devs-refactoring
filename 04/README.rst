@@ -4,8 +4,10 @@ specs
 ^^^^^
    1. Test/RENAME/string_producers -> ``test_empty_string_producers``
       - Not to Raise Error, Empty string means no data? it's fine.
+
    #. Test/NEW/wrong_producers_type
       - Only If data was come and it's interfaces are wrong.
+
    #. Assertion Not added, Raising Error can handle it.
 
 FIX/0.102a
@@ -19,7 +21,9 @@ specs
       - ``test_string_producers:`` check when invalid type as input *(NOT TYPEERROR)*
          - TypeError not occur/WHY?/Python string also iterable.
             - then, Need Type Assertion? (Guess not..)
+
    #. ``province.gen_province_doc:`` Changed to provide producer_doc also internally
+
    #. Test/NEW/Negative test
       - ``test_string_producer:`` check when invalid producer data input *(TYPEERROR!)*
 
