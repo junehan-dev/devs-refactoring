@@ -1,12 +1,17 @@
 FIX/0.102a
 ----------
-todos
+specs
 ^^^^^
-   1. no producers on province instance
-   #. demand zero for province instance
-   #. demand negative on province instance
-   #. Type error on input for province instance
+   1. Test/Negative test
+      - ``test_no_prods_demand_unchanged`` : no producers for province
+      - ``test_no_demand_minus_shortfall`` : demand zero for province
+	  - ``test_dept_demand_minux_profit`` : demand negative on province
+	  - ``test_string_produducers`` : check when invalid type as input
    #. substitute some tests with assertions
+
+need improve
+^^^^^^^^^^^^
+   1. ``test_string_producers`` did not raised appropriate error **, UNSOLVED**
 
 FIX/0.101rc
 ----------

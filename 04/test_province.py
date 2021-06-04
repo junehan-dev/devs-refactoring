@@ -30,14 +30,29 @@ class ProvinceTestCase(unittest.TestCase):
 
 from province import gen_producer, gen_province
 class ProvinceNegativeTestCase(unittest.TestCase):
-	def test_no_prods(self):
-		desert_data = gen_province("desert", [], 30, 20);
+	def test_no_prods_demand_unchanged(self):
+		desert_data = gen_province("desert", (), 30, 20);
 		desert = Province(desert_data);
 		self.assertEqual(desert.shortfall, 30);
-		desert.demand = 0;
-		self.assertEqual(desert.shortfall, -25);
-		self.assertEqual(desert.profit, 0);
-		self.assertEqual(desert.demand, 0);
+
+	def test_no_demand_minus_shortfall(self):
+		communist = Province(get_sample_province());
+		communist.demand = 0;
+		self.assertEqual(communist.demand, 0);
+		self.assertEqual(communist.profit, 0);
+		self.assertEqual(communist.shortfall, -25);
+
+	def test_dept_demand_minus_profit(self):
+		loan = Province(get_sample_province());
+		loan.demand = -20;
+		self.assertEqual(loan.demand, -20);
+		self.assertEqual(loan.shortfall, -45);
+		self.assertEqual(loan.profit, -50);
+		
+	def test_string_producers(self):
+		fakedata = gen_province("fakeland", "", 30, 20);
+		fakeland = Province(fakedata);
+		self.assertFalse(fakeland.total_production);
 		
 if __name__ == "__main__":
 	unittest.main();
