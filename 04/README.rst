@@ -1,3 +1,13 @@
+0.102b
+------
+specs
+^^^^^
+   1. Test/RENAME/string_producers -> ``test_empty_string_producers``
+      - Not to Raise Error, Empty string means no data? it's fine.
+   #. Test/NEW/wrong_producers_type
+      - Only If data was come and it's interfaces are wrong.
+   #. Assertion Not added, Raising Error can handle it.
+	
 FIX/0.102a
 ----------
 specs
@@ -16,8 +26,8 @@ specs
 
 need improve
 ^^^^^^^^^^^^
-   1. ``test_string_producers`` did not raised appropriate error **, UNSOLVED**
-   #. substitute some tests with assertions **, UNSOLVED**
+   1. ``test_string_producers`` did not raised appropriate error **, SOLVED**
+   #. substitute some tests with assertions **, SOLVED**
 
 FIX/0.101rc
 ----------

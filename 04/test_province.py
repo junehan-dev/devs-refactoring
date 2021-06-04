@@ -48,15 +48,20 @@ class ProvinceNegativeTestCase(unittest.TestCase):
 		self.assertEqual(loan.demand, -20);
 		self.assertEqual(loan.shortfall, -45);
 		self.assertEqual(loan.profit, -50);
-		
-	def test_string_producers(self):
+
+	def test_empty_string_producers(self):
 		fakedata = gen_province_doc("fakeland", "", 30, 20);
 		fakeprov = Province(fakedata);
 		self.assertEqual(fakeprov.total_production, 0);
-		
+
+	def test_wrong_producers_type(self):
+		with self.assertRaises(TypeError):
+			wrongdata = gen_province_doc("fakeland", "fake", 30, 20);
+
 	def test_string_producer(self):
 		with self.assertRaises(TypeError):
 			fakedata = gen_province_doc("fakeland", ("",), 30, 20);
-		
+
 if __name__ == "__main__":
 	unittest.main();
+
