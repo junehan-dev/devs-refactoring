@@ -7,7 +7,7 @@ specs
    #. Test/NEW/wrong_producers_type
       - Only If data was come and it's interfaces are wrong.
    #. Assertion Not added, Raising Error can handle it.
-	
+
 FIX/0.102a
 ----------
 specs
@@ -15,13 +15,13 @@ specs
    1. Test/NEW/Negative test
       - ``test_no_prods_demand_unchanged:`` no producers for province
       - ``test_no_demand_minus_shortfall:`` demand zero for province
-	  - ``test_dept_demand_minus_profit:`` demand negative on province
-	  - ``test_string_producers:`` check when invalid type as input *(NOT TYPEERROR)*
+      - ``test_dept_demand_minus_profit:`` demand negative on province
+      - ``test_string_producers:`` check when invalid type as input *(NOT TYPEERROR)*
          - TypeError not occur/WHY?/Python string also iterable.
             - then, Need Type Assertion? (Guess not..)
    #. ``province.gen_province_doc:`` Changed to provide producer_doc also internally
    #. Test/NEW/Negative test
-	  - ``test_string_producer:`` check when invalid producer data input *(TYPEERROR!)*
+      - ``test_string_producer:`` check when invalid producer data input *(TYPEERROR!)*
 
 
 need improve
