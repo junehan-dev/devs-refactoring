@@ -2,16 +2,22 @@ FIX/0.102a
 ----------
 specs
 ^^^^^
-   1. Test/Negative test
-      - ``test_no_prods_demand_unchanged`` : no producers for province
-      - ``test_no_demand_minus_shortfall`` : demand zero for province
-	  - ``test_dept_demand_minux_profit`` : demand negative on province
-	  - ``test_string_produducers`` : check when invalid type as input
-   #. substitute some tests with assertions
+   1. Test/NEW/Negative test
+      - ``test_no_prods_demand_unchanged:`` no producers for province
+      - ``test_no_demand_minus_shortfall:`` demand zero for province
+	  - ``test_dept_demand_minus_profit:`` demand negative on province
+	  - ``test_string_producers:`` check when invalid type as input *(NOT TYPEERROR)*
+         - TypeError not occur/WHY?/Python string also iterable.
+            - then, Need Type Assertion? (Guess not..)
+   #. ``province.gen_province_doc:`` Changed to provide producer_doc also internally
+   #. Test/NEW/Negative test
+	  - ``test_string_producer:`` check when invalid producer data input *(TYPEERROR!)*
+
 
 need improve
 ^^^^^^^^^^^^
    1. ``test_string_producers`` did not raised appropriate error **, UNSOLVED**
+   #. substitute some tests with assertions **, UNSOLVED**
 
 FIX/0.101rc
 ----------
