@@ -62,31 +62,30 @@ class Province:
 		self._producers = ((producer,) + self._producers);
 		self.total_production += producer.production;
 
-def get_sample_province():
-	_province = namedtuple(
-		'province_data',
+def gen_province_doc(name, producers_data, demand, price):
+	producer_doc = namedtuple(
+		"producer_doc",
+		("name", "cost", "production")
+	)
+	province_doc = namedtuple(
+		'province_doc',
 		("name", "producers", "demand", "price")
 	);
-	_producer = namedtuple(
-		'producer_data',
-		("name", "cost", "production")
+
+	return (province_doc(name, tuple(producer_doc(*pd) for pd in producers_data), demand, price));
+
+def get_sample_province():
+	producers_doc = (
+		("Byzantium", 10, 9),
+		("Attalia", 12, 10),
+		("Sinope", 10, 6),
 	);
 
-	producers = (
-		_producer(
-			name = "Byzantium", cost = 10, production = 9
-		), _producer(
-			name = "Attalia", cost = 12, production = 10
-		), _producer(
-			name = "Sinope", cost = 10, production = 6
-		),
-	);
-
-	ret = _province(
-		name = "Asia",
-		producers = producers,
-		demand = 30,
-		price = 20,
+	ret = gen_province_doc(
+		"Asia",
+		producers_doc,
+		30,
+		20,
 	);
 
 	return (ret);
