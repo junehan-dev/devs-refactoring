@@ -8,7 +8,7 @@ class Order:
 		self.id = Order.get_id();
 	
 	@property
-	def priority(self):
+	def priority(self) -> int:
 		return (self._priority.value);
 
 	@priority.setter
