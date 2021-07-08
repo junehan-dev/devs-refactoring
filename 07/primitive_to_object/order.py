@@ -1,11 +1,12 @@
 from random import choice
+from priority import Priority
 
 class Order:
-	_priority: str;
+	_priority: Priority;
 	_id: int = 0;
 
-	def __init__(self, d:str):
-		self._priority = d;
+	def __init__(self, p_obj:Priority):
+		self._priority = p_obj;
 		self.id = Order.get_id();
 	
 	@property
@@ -13,8 +14,8 @@ class Order:
 		return (self._priority);
 
 	@priority.setter
-	def priority(self, new_priority):
-		self._priority = new_priority;
+	def priority(self, p_data: str):
+		self._priority = Priority(p_data);
 
 	def __str__(self):
 		return f"{self.id}: {self.priority}";
