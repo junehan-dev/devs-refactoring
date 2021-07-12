@@ -7,8 +7,7 @@ class Order:
 
 	@property
 	def base_price(self) -> int:
-		base_price = self._quantity * self._item.price;
-		return (base_price);
+		return (self._quantity * self._item.price);
 
 	@property
 	def discount_factor(self) -> int:
@@ -17,9 +16,7 @@ class Order:
 
 	@property
 	def price(self) -> int:
-		BASE_PRICE = self.base_price;
-		DISCOUNT_FACTOR = self.discount_factor;
-		return (BASE_PRICE * DISCOUNT_FACTOR);
+		return (self.base_price * self.discount_factor);
 
 if __name__ == "__main__":
 	item = Item(3000, "toy");
