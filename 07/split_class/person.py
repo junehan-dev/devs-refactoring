@@ -1,8 +1,11 @@
+from telephone import TelephoneNumber
+
 class Person:
 	def __init__(self, n, o_code, o_num):
 		self._name				= n;
 		self._office_areacode	= o_code;
 		self._office_number		= o_num;
+		self._telephone_number	= TelephoneNumber();
 
 	@property
 	def name(self):
@@ -34,3 +37,4 @@ class Person:
 if	__name__ == "__main__":
 	p = Person("June han", "32A", "23-142-4423");
 	print(p.name, p.office_areacode, p.office_number, p.telephone_number);
+
