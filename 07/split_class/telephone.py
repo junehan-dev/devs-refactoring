@@ -2,16 +2,16 @@ from dataclasses import dataclass
 
 @dataclass(frozen = False)
 class TelephoneNumber:
-	_office_areacode: str;
+	_areacode: str;
 
 	@property
-	def office_areacode(self):
-		return (self._office_areacode);
+	def areacode(self):
+		return (self._areacode);
 
-	@office_areacode.setter
-	def office_areacode(self, v):
-		self._office_areacode = v;
+	@areacode.setter
+	def areacode(self, v):
+		self._areacode = v;
 
 	def __str__(self):
-		return (self.office_areacode + " is number");
+		return (self.areacode + " is number");
 

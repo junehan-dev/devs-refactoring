@@ -3,7 +3,6 @@ from telephone import TelephoneNumber
 class Person:
 	def __init__(self, n, o_code, o_num):
 		self._name				= n;
-		#self._office_areacode	= o_code;
 		self._office_number		= o_num;
 		self._telephone_number	= TelephoneNumber(o_code);
 
@@ -16,13 +15,11 @@ class Person:
 	
 	@property
 	def office_areacode(self):
-		return (self.telephone_number.office_areacode);
-		#return (self._office_areacode);
+		return (self.telephone_number.areacode);
 
 	@office_areacode.setter
 	def office_areacode(self, v):
-		self.telephon_number.office_areacode = v;
-		#self._office_areacode = v;
+		self.telephon_number.areacode = v;
 
 	@property
 	def office_number(self):
@@ -35,7 +32,6 @@ class Person:
 	@property
 	def telephone_number(self):
 		return (self._telephone_number);
-		return (f"{self.office_areacode} {self.office_number}");
 
 if	__name__ == "__main__":
 	p = Person("June han", "32A", "23-142-4423");
