@@ -4,7 +4,7 @@ class Manager:
 
 class Department:
 	def __init__(self, ch_code, m):
-		self._charge_code	= ch_code;
+		self._charge_code = ch_code;
 		self._manager = m;
 
 	@property
@@ -28,9 +28,13 @@ class Person:
 	def department(self):
 		return (self._department);
 
+	@property
+	def manager(self):
+		return (self.department.manager);
+
 if __name__ == "__main__":
 	dp = Department("AB01", Manager("manager1"));
 	aPerson = Person("june", dp);
 
-	manager = aPerson.department.manager;
+	manager = aPerson.manager;
 	print(manager.name);
