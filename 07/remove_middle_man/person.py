@@ -28,7 +28,3 @@ class Person:
 	def	department(self):
 		return (self._department);
 
-	@property
-	def manager(self):
-		return (self._department._manager);
-
