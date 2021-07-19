@@ -11,6 +11,10 @@ class Department:
 	def charge_code(self):
 		return (self._charge_code);
 
+	@property
+	def manager(self):
+		return (self._manager);
+
 class Person:
 	def __init__(self, name, dp:Department):
 		self._name = name;
@@ -19,6 +23,10 @@ class Person:
 	@property
 	def name(self):
 		return (self._name);
+
+	@property
+	def	department(self):
+		return (self._department);
 
 	@property
 	def manager(self):
