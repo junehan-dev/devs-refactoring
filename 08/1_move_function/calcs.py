@@ -3,7 +3,7 @@ import math
 def calculate_time():
 	return (600);
 
-def calculate_distance(points):
+def get_total_distance(points):
 	def distance(p1, p2):
 		_EARTH_RADIUS = 3959;
 		dLat = radiance(p2[0]) - radiance(p1[0]);
@@ -30,12 +30,11 @@ def calculate_distance(points):
 
 def track_summary(points):
 	total_time = calculate_time();
-	total_distance = calculate_distance(points);
-	pace = (total_time / 60 / total_distance);
+	total_distance = get_total_distance(points);
 	return ({
 		"time": total_time,
 		"distance": total_distance,
-		"pace": pace,
+		"pace": (total_time / 60 / total_distance),
 	});
 
 if __name__ == "__main__":
