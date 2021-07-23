@@ -46,19 +46,11 @@ def calculate_distance(points):
 
 
 def track_summary(points):
-	def calculate_distance():
-		print("called local");
-		result = 0;
-		nonlocal points
-		point_len = len(points);
-		i = 1;
-		while (i < point_len):
-			result += distance(points[i - 1], points[i]);
-			i += 1;
-		return (result);
+	def calculate_distance(p):
+		total_distance = globals()["calculate_distance"](p);
+		return (total_distance);
 	total_time = calculate_time();
-	total_distance = globals()["calculate_distance"](points);
-	#total_distance = calculate_distance(points);
+	total_distance = calculate_distance(points);
 	pace = (total_time / 60 / total_distance);
 	return ({
 		"time": total_time,
