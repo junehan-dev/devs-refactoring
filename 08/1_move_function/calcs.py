@@ -1,10 +1,19 @@
+import math
+
 def distance(p1, p2):
-	p1_sum = sum(p1);
-	p2_sum = sum(p2);
-	return (p1_sum - p2_sum if (p1_sum > p2_sum) else p2_sum - p1_sum);
+	_EARTH_RADIUS = 3959;
+	dLat = radiance(p2[0]) - radiance(p1[0]);
+	dLon = radiance(p2[-1]) - radiance(p1[-1]);
+	a = (math.pow(math.sin(dLat / 2), 2)
+		+ math.cos(radiance(p2[0]))
+		* math.cos(radiance(p1[0]))
+		* math.pow(math.sin(dLon / 2), 2)
+	);
+	c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a));
+	return (_EARTH_RADIUS * c);
 
 def radiance(degrees):
-	pass
+	return (degrees * math.pi / 180);
 
 def calculate_time():
 	return (600);
