@@ -1,9 +1,9 @@
 class AccountType:
 	def __init__(self, p):
-		self.premium = p;
+		self.ispremium = p;
 
-	def overdraft_charge(self, overdrawn_days):
-		if (self.premium):
+	def charge(self, overdrawn_days):
+		if (self.ispremium):
 			basecharge = 10;
 			if (overdrawn_days <= 7):
 				return (basecharge);

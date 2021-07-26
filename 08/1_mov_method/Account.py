@@ -7,10 +7,7 @@ class Account:
 
 	@property
 	def overdraft_charge(self):
-		if (self.type.premium):
-			return self.type.overdraft_charge(self.days_overdrawn);
-		else:
-			return (self.days_overdrawn * 1.75);
+		return self.type.charge(self.days_overdrawn);
 
 	@property
 	def base_charge(self):
