@@ -6,15 +6,11 @@ class Account:
 		self.type = t;
 
 	@property
-	def overdraft_charge(self):
-		return self.type.charge(self.days_overdrawn);
-
-	@property
-	def base_charge(self):
+	def bank_charge(self):
 		result = 4.5;
-		result += self.overdraft_charge if (self.days_overdrawn > 0) else 0;
+		result += self.type.charge(self.days_overdrawn) if (self.days_overdrawn > 0) else 0;
 		return (result);
 
 if __name__ == "__main__":
 	ac = Account(20, AccountType(True));
-	print(ac.base_charge);
+	print(ac.bank_charge);
