@@ -1,17 +1,16 @@
+from AccountType import AccountType
+
 class Account:
-	def __init__(self, od_days, t):
+	def __init__(self, od_days, t:AccountType):
 		self.days_overdrawn = od_days;
 		self.type = t;
 
 	@property
 	def overdraft_charge(self):
-		if (self.type["premium"]):
-			basecharge = 10;
-			if (self.days_overdrawn <= 7):
-				return (basecharge);
-			else:
-				return (basecharge + (self.days_overdrawn - 7) * 0.85);
-		return (self.days_overdrawn * 1.75);
+		if (self.type.premium):
+			return self.type.overdraft_charge(self.days_overdrawn);
+		else:
+			return (self.days_overdrawn * 1.75);
 
 	@property
 	def base_charge(self):
@@ -20,5 +19,5 @@ class Account:
 		return (result);
 
 if __name__ == "__main__":
-	ac = Account(20, {"premium": 0});
+	ac = Account(20, AccountType(True));
 	print(ac.base_charge);
