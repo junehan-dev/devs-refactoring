@@ -14,3 +14,4 @@ class Customer:
 	def discount_rate(self, v):
 		self._discount_rate = v;
 		return (None);
+
