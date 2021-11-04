@@ -3,10 +3,14 @@ from units			import Amount
 from contracts		import Customer as Contract
 
 class Customer:
+	_discount_rate: int;
 	def __init__(self, name, discount_rate):
 		self._name =			name;
-		self._discount_rate =	discount_rate;
+		self._set_discount_rate(discount_rate);
 		self._contract = 		Contract(datetime.now());
+
+	def _set_discount_rate(self, rate):
+		self._discount_rate = rate;
 
 	@property
 	def discount_rate(self):
